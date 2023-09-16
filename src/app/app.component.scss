@@ -1,0 +1,36 @@
+.inp{
+    border: 2px,solid,black;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 10px 3px 0px 0px;
+}
+
+.inp:hover { // I think you said you wanted focus as well
+    border: 2px solid red;
+  }
+// .inp:hover {
+//    border: 2px solid red;
+// }
+// .inp:active{
+//     border: 2px solid blue;
+// }
+
+.btnAdd {
+  background-color: aqua;
+  border: 1px thin yellow;
+  border-radius: 5px;
+  padding: 5px;
+}
+.btnAdd:hover {
+    background-color: black;
+}
+.tbl {
+    border: 2px solid blueviolet;
+}
+.c1 {
+  background-color: aquamarine;
+}
+.c2 {
+  background-color: yellow;
+}

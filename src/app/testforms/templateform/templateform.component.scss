@@ -1,0 +1,8 @@
+.select-institution {
+    width: 200px;
+    height: 30px;
+    &:focus {
+        outline:none;  
+    }
+}
+// .select-institution:focus {outline:none;}

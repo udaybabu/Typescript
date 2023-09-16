@@ -1,0 +1,67 @@
+<form [formGroup]="login" (ngSubmit)="sendData()">
+  <div>
+    <label>
+      UserName:
+      <input type="text" formControlName="username" name="username" required /><br />
+      <label class="danger" *ngIf="
+          login.get('username')?.hasError('required') &&
+          login.get('username')?.touched
+        ">Please enter username</label>
+      <label class="danger" *ngIf="login.get('username')?.hasError('minlength')">Please enter username minium 5
+        characters</label>
+      <label class="danger" *ngIf="login.get('username')?.hasError('spaceerror')">Please remove spaces</label>
+      <label class="danger" *ngIf="login.get('username')?.hasError('nameerror')">Name all ready exist</label>
+    </label>
+  </div>
+  <div>
+    <label>
+      Password:
+      <input type="password" formControlName="password" name="password" required /><br />
+      <label class="danger" *ngIf="
+          login.get('password')?.hasError('required') &&
+          login.get('password')?.touched
+        ">Please enter valid password</label>
+      <label class="danger" *ngIf="login.get('password')?.hasError('minlength')">Please enter password length min 6
+        characters</label>
+      <label class="danger" *ngIf="login.get('password')?.hasError('maxlength')">Please enter password length max 8
+        characters</label>
+    </label>
+  </div>
+  <div>
+    <label>
+      Email:
+      <input type="email" formControlName="email" name="email" required /><br />
+      <label class="danger" *ngIf="login.get('email')?.hasError('required')">Please enter email</label>
+      <label class="danger" *ngIf="login.get('email')?.hasError('email')">Please enter valid email</label>
+    </label>
+  </div>
+  <div>
+    <label>Phone No:
+      <input NumbersOnly type="text" formControlName="phonenumber" name="phonenumber"
+        (keypress)="checkNumbers($event)" /><br />
+      <label class="danger" *ngIf="
+          login.get('phonenumber')?.hasError('required') &&
+          login.get('phonenumber')?.touched
+        ">Please enter valid phone number</label>
+      <label class="danger" *ngIf="
+          login.get('phonenumber')?.hasError('minlength') ||
+          login.get('phonenumber')?.hasError('maxlength')
+        ">Please enter valid phone number</label>
+    </label>
+  </div>
+  <div>
+    <label> Address</label><br />
+    <div *ngFor="let empaddress of empAddress.controls; let i = index">
+      <!-- <input type="text" [formControlName]="i" /> -->
+      <input type="text" formControlName="addressline1" placeholder="Addressline1" />
+      <input type="text" formControlName="addressline2" placeholder="Addressline2" />
+      <input type="text" formControlName="pincode" placeholder="Pincode" />
+      <input type="text" formControlName="state" placeholder="State" />
+      <button (click)="clickAdd()">ADD</button>
+      <button (click)="clickRemove(i)">DELETE</button>
+    </div>
+  </div>
+  <div>
+    <button type="submit">Login</button>
+  </div>
+</form>

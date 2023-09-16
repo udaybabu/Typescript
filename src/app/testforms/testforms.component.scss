@@ -1,0 +1,32 @@
+.uname,
+.pwd {
+  padding: 5px;
+  margin-top: 10px;
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 17px;
+  //   &:hover {
+  //     border-color: aqua;
+  //   }
+  //   &:active {
+  //     border-color: blue;
+  //   }
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: blue;
+  }
+}
+
+.login {
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 17px;
+  margin-left: 70px;
+}
+.error{
+    color: red;
+    font-size: 10px;
+}

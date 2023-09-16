@@ -1,0 +1,18 @@
+<div *ngIf="isTest; then pass; else fail">Hello</div>
+<ng-template #pass>pass</ng-template>
+<ng-template #fail>Fail</ng-template>
+
+<div [ngSwitch]="caseTest">
+  <div *ngSwitchCase="'a'">A</div>
+  <div *ngSwitchCase="'b'">B</div>
+  <div *ngSwitchCase="'c'">C</div>
+  <div *ngSwitchCase="'d'">D</div>
+  <div *ngSwitchDefault> Default </div>
+</div>
+
+<div class='row' [ngSwitch]="selectedValue">  
+    <div *ngSwitchCase="'One'">One is Pressed</div>  
+    <div *ngSwitchCase="'Two'">Two is Selected</div>  
+    <div *ngSwitchDefault>Default Option</div>  
+</div>  
+ 

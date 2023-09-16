@@ -1,0 +1,26 @@
+<form #loginForm="ngForm" > 
+    <input type="text" class="uname"  #name="ngModel" [ngModel] name="username"  placeholder="UserName" required/><br>
+    <label class="error" *ngIf="(name.touched  && name.errors?.required) || name.pristine ">Please enter user name</label><br>
+    <input type="password" class="pwd"  #password="ngModel" [ngModel] name="password"  placeholder="Password" required/><br>
+    <label class="error" *ngIf="(password.touched && password.errors?.required) || password.pristine">Please enter password</label><br>
+    <button class="login" (click)="clickLogin(loginForm)">LOGIN</button>
+    <div>
+        <select class="form-control" formControlName="currency">
+            <option *ngFor="let item of currency" value="item.value" >{{item.key}}</option>
+        </select>
+    </div>
+</form>
+<div>
+    <select class="select-institution" formControlName="institutionSelect" placeholder="This is test" >
+        <option *ngFor="let institute of institutions; let i=index" >{{institute.name}}</option>
+      </select>
+</div>
+<div>
+    <select  class='form-control' 
+        (change)="ChangingValue($event)" [value]='46'>
+  <option value='47'>47</option>
+  <option value='46'>46</option>
+  <option value='45'>45</option>
+</select>
+</div>
+
